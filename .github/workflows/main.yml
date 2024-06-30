@@ -44,6 +44,12 @@ jobs:
       with:
         python-version: 3.8
 
+    # 2024-06-27运行报错 https://github.com/Barry-Flynn/hexo-circle-of-friends/actions/runs/9728445541/job/26849192258#step:5:168
+    # 2024-06-30问题反馈 https://github.com/Rock-Candy-Tea/hexo-circle-of-friends/issues/146
+    # 2024-06-30问题解决 https://github.com/Rock-Candy-Tea/hexo-circle-of-friends/pull/144
+    - name: Install old pip version
+      run: pip install --upgrade 'pip<24.1'
+      
     - name: Install requirements
       working-directory: ./hexo_circle_of_friends
       run: |
